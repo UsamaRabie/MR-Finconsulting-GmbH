@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import img1 from "@/app/images/logo.png";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const sidebar = () => {
   const path = usePathname();
@@ -21,8 +22,8 @@ const sidebar = () => {
           <div className="flex flex-col items-center w-full mt-3 border-t border-gray-300 text-[#265E73]">
 
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73 `}
               href="/"
@@ -51,10 +52,10 @@ const sidebar = () => {
                 <br />
                 <p className="text-xs">Berlin</p>
               </span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Nachrichten" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Nachrichten"
@@ -75,10 +76,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Nachrichten</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Nachricht%20schreiben" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Nachricht schreiben"
@@ -113,10 +114,10 @@ const sidebar = () => {
               <span className="ml-2 text-sm font-medium">
                 Nachricht schreiben
               </span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Fax%20senden" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Fax senden"
@@ -137,10 +138,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Fax senden</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "checklisten" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="checklisten"
@@ -163,10 +164,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Checklisten</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Telefon" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Telefon"
@@ -189,10 +190,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Telefon</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Videokonferenz" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Videokonferenz"
@@ -215,10 +216,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Videokonferenz</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Kalender" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Kalender"
@@ -239,10 +240,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Kalender</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Aufrtage" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Aufrtage"
@@ -263,10 +264,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Aufträge</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Aufgaben" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Aufgaben"
@@ -299,10 +300,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Aufgaben</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Zeiterfassung" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Zeiterfassung"
@@ -323,10 +324,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Zeiterfassung</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Produktivitat" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="Produktivitat"
@@ -347,10 +348,10 @@ const sidebar = () => {
               </div>
 
               <span className="ml-2 text-sm font-medium">Produktivität</span>
-            </a>
+            </Link>
 
-            <a
-              className={`flex items-center w-full h-12 px-3 ${
+            <Link
+              className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "kalkulator" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="kalkulator"
@@ -373,7 +374,7 @@ const sidebar = () => {
               <span className="ml-2 text-sm font-medium">
                 kalkulator Neukunde
               </span>
-            </a>
+            </Link>
 
 
           </div>

@@ -15,22 +15,24 @@ function User({ img, name, email }) {
   const toggleOpen = () => setOpen((cur) => !cur);
 
   return (
-    <div className=" bg-white">
-      <Button
+
+    <div className="  w-full p-3 mx-auto bg-white border-b-2">
+      
+      <button
         className="flex w-full items-center justify-between bg-white py-3 "
         onClick={toggleOpen}
       >
-        <div className="flex flex-row w-full border-y border-solid py-3  border-gray-500">
+        <div className="flex flex-row w-full  border-solid py-3  border-gray-500">
           <Image
             width={50}
             height={200}
-            class="inline-block rounded-full ring-2 ring-white"
+            class="inline-block rounded-xl ring-2 ring-white mr-3 "
             src={img}
             alt=""
           />
           <div className="flex flex-col items-start pt-2">
-            <p className="text-black">{name}</p>
-            <p className="text-gray-500">{email}</p>
+            <p className="text-[#2D3748] font-bold">{name}</p>
+            <p className="text-[#718096]">{email}</p>
           </div>
         </div>
 
@@ -48,11 +50,11 @@ function User({ img, name, email }) {
             />
           </svg>
         </div>
-      </Button>
+      </button>
 
       <Collapse open={open}>
-        <Card className="my-4 mx-auto w-10/12 bg-[#3AB3B3] p-5">
-          <CardBody className="flex bg-white border-r-8">
+        <Card className="my-4 mx-auto  bg-[#3AB3B3] p-5">
+          <CardBody className="flex bg-white h-6 items-center justify-center rounded-full">
             <HoverMenu
               title={"Kommunikation"}
               menuItems={[
@@ -91,6 +93,7 @@ function User({ img, name, email }) {
         </Card>
       </Collapse>
     </div>
+
   );
 }
 

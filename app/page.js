@@ -5,7 +5,7 @@ import User from "./components/User";
 const page = () => {
   return (
  
-      <div className="bg-white p-2  rounded-[15px] w-[80%] mx-auto">
+      <div className="bg-white p-2  rounded-[15px] w-[80%] mx-auto border-2 border-solid border-red-500">
         <button
         className="flex w-full items-center justify-between bg-white p-3 pb-10 border-b-2 text-[#2D3748] cursor-auto "
         

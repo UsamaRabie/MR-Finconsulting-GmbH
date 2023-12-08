@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   
   return (
           <div className="">
-            <div className="flex gap-5 items-center justify-between px-36">
+            <div className="flex gap-5 items-center justify-between w-[80%] mx-auto mb-5">
               <Link className={`  ${activeLink === "Neuer-Angestellter/Personalien" ? "border-b-4 border-solid border-[#3AB3B3] " : "" }`} href="Personalien">Personalien</Link>
               <Link className={`  ${activeLink === "Neuer-Angestellter/Beschaftigung" ? "border-b-4 border-solid border-[#3AB3B3] " : ""}`} href="Beschaftigung">Beschaftigung</Link>
               <Link className={`  ${activeLink === "Neuer-Angestellter/Lohnsteuer" ? "border-b-4 border-solid border-[#3AB3B3]" : ""}`} href="Lohnsteuer">Lohnsteuer</Link>
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 
             {children}
 
-            <div className="flex justify-end items-center gap-4 mr-[200px] mt-5">
+            <div className="flex w-[90%] justify-end items-center gap-5  mt-5 mb-20">
               <button className="p-2 rounded-lg text-white text-sm bg-[#979797]">Personalnummer</button>
               <button className="p-2 rounded-lg text-white text-sm bg-[#3AB3B3]">Vollstandigkeitsprufung</button>
               <button className="p-2 rounded-lg text-white text-sm bg-[#3AB3B3]">Arbeitnehmer erstellen</button>

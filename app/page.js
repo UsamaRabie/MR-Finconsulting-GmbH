@@ -3,6 +3,7 @@ import Search from "./components/Search";
 import User from "./components/User";
 
 import Active_archiv from "@/app/components/Active_archiv"
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -16,10 +17,16 @@ const page = () => {
           <option value="US">test</option>
         </select>
 
+
         <div className="space-x-8">
-          <button className="bg-[#4FD1C5] text-white rounded-full px-6 py-3">
+          
+        <Link href={"Neuer-Angestellter/Personalien"}>
+        <button className="bg-[#4FD1C5] text-white rounded-full px-6 py-3">
             Neuer Angestellter
           </button>
+        </Link>
+          
+        
 
           <button className="bg-white border-2 border-gray-900 rounded-full px-6 py-3">
             Übertragen an

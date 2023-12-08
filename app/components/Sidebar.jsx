@@ -9,7 +9,6 @@ import Link from "next/link";
 const sidebar = () => {
   const path = usePathname();
   let activeLink=path.slice(1)
-  console.log(activeLink);
 
   return (
     <div>

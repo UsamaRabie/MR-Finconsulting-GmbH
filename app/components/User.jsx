@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+
 import {
   Collapse,
   Button,
@@ -16,17 +17,17 @@ function User({ img, name, email }) {
 
   return (
 
-    <div className="  w-full p-3 mx-auto bg-white border-b-2">
+    <div className="  w-full mx-auto bg-white border-b-2 last:border-b-0">
       
       <button
-        className="flex w-full items-center justify-between bg-white py-3 "
+        className="flex w-full items-center justify-between bg-white py-2  "
         onClick={toggleOpen}
       >
-        <div className="flex flex-row w-full  border-solid py-3  border-gray-500">
+        <div className="flex flex-row w-full  border-solid py-2  border-gray-500">
           <Image
             width={50}
             height={200}
-            class="inline-block rounded-xl ring-2 ring-white mr-3 "
+            class="inline-block rounded-xl ring-2 ring-white mr-4 "
             src={img}
             alt=""
           />

@@ -143,7 +143,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "checklisten" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="checklisten"
+              href="Checklisten"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg

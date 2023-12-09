@@ -1,32 +1,51 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 
 import User from "@/app/components/User";
 import Link from "next/link";
 
 const Card = () => {
+  const [selectedOption, setSelectedOption] = useState("Mitarbeiter");
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
   return (
     <>
 
     <div className="bg-white p-5 rounded-[15px] w-[85%] mx-auto border-2 border-solid">
       
       <div className="flex justify-between border-b-2 pb-5">
-        <select className="bg-white border-2 border-gray-900 rounded-full px-6 py-1">
-          <option selected>Kunden</option>
-          <option value="US">test</option>
+        <select className="bg-white border-2 border-gray-900 rounded-full px-6 py-1"
+         value={selectedOption}
+         onChange={handleOptionChange}
+         >
+          <option selected>Mitarbeiter</option>
+          <option value="US">Kunden</option>
         </select>
 
 
         <div className="space-x-8">
-          
-        <Link href={"Neuer-Angestellter/Personalien"}>
+
+          {selectedOption==="Mitarbeiter"?    <Link href={"Neuer-Angestellter/Personalien"}>
         <button className="bg-[#4FD1C5] text-white rounded-full px-6 py-3">
             Neuer Angestellter
           </button>
+        </Link>:  <Link href={"Neukunde/Allgemeine-Angaben"}>
+        <button className="bg-[#4FD1C5] text-white rounded-full px-6 py-3">
+        Neukunde
+          </button>
         </Link>
+        }
+          
+    
+
+      
           
         
-
-          <button className="bg-white border-2 border-gray-900 rounded-full px-6 py-3">
+      
+          <button  className="bg-white border-2 border-gray-900 rounded-full px-6 py-3">
             Übertragen an
           </button>
         </div>

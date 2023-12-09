@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-const YourComponent = () => {
+const PhoneButton = () => {
   const WIDTH = 50;
   const [bgOffset, setBgOffset] = useState(0);
   const [active, setActive] = useState(0);
@@ -64,7 +64,7 @@ const YourComponent = () => {
           }}
           onClick={() => slideBg(0)}
         >
-          Aktiv
+          Mitarbeiter
         </button>
         <button
           style={{
@@ -80,7 +80,7 @@ const YourComponent = () => {
           }}
           onClick={() => {slideBg(1)} }
         >
-          Archiv
+          Kunden
         </button>
        
       </div>
@@ -88,4 +88,4 @@ const YourComponent = () => {
   );
 };
 
-export default YourComponent;
+export default PhoneButton;

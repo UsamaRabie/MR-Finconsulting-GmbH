@@ -31,3 +31,18 @@ html {
     background-color: #3AB3B3;
   }
 
+  .selectt {
+    width: 150px;
+ 
+    font-size: 16px;
+    line-height: 1;
+ 
+    height: 34px;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ffffff;
+    -webkit-appearance: none;
+    background-position-x: 120px;
+
+
+}
+
+

@@ -17,11 +17,12 @@ const sidebar = () => {
           <Image src={img1} />
         </a>
 
-        <div className="w-full px-2 transition-all duration-300">
+        <div className="w-full px-2">
           <div className="flex flex-col items-center w-full mt-3 border-t border-gray-300 text-[#265E73]">
 
 
             <Link
+            
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73 `}
@@ -53,11 +54,12 @@ const sidebar = () => {
               </span>
             </Link>
 
+
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Nachrichten" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Nachrichten"
+              href="/Nachrichten"
             >
               <div className="bg-white p-2 rounded-[12px] ">
                 <svg
@@ -81,7 +83,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Nachricht%20schreiben" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Nachricht schreiben"
+              href="/Nachricht schreiben"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -119,7 +121,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Fax%20senden" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Fax senden"
+              href="/Fax senden"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -141,9 +143,9 @@ const sidebar = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "checklisten" ? "bg-[#3AB3B3] text-white" : ""
+                activeLink === "Checklisten" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Checklisten"
+              href="/Checklisten"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -169,7 +171,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Telefon" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Telefon"
+              href="/Telefon"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -195,7 +197,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Videokonferenz" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Videokonferenz"
+              href="/Videokonferenz"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -221,7 +223,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Kalender" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Kalender"
+              href="/Kalender"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -245,7 +247,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Aufrtage" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Aufrtage"
+              href="/Aufrtage"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -269,7 +271,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Aufgaben" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Aufgaben"
+              href="/Aufgaben"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -305,7 +307,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Zeiterfassung" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Zeiterfassung"
+              href="/Zeiterfassung"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -329,7 +331,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "Produktivitat" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="Produktivitat"
+              href="/Produktivitat"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -353,7 +355,7 @@ const sidebar = () => {
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "kalkulator" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="kalkulator"
+              href="/kalkulator"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg

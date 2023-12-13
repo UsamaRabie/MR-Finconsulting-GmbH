@@ -4,7 +4,9 @@
 
 body {
     background-color: #F8F9FA;
+  
 }
+
 
 
 
@@ -13,7 +15,6 @@ body {
 html {
     scrollbar-color: #3AB3B3 #F5F5F5;
     scrollbar-width: thin;
-    zoom: 80% !important;
 }
 
 /*chrome scrollbar*/

@@ -1,4 +1,5 @@
-import User from "@/app/components/UserAccounting";
+import User from "./UserAccounting";
+
 
 
 const CardAccounting = () => {

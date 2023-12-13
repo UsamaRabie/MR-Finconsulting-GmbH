@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
-    background-color: #F8F9FA;
+  background-color: #F8F9FA;
+  transform: scale(0.9);
+  transform-origin: top left;
+  width: 111.1111%; /* Adjust the width to compensate for scaling */
+  height: 111.1111%; /* Adjust the height to compensate for scaling */
+  margin: 0; /* Remove default margin to prevent scrolling */
+  
 }
+
 
 
 
@@ -13,7 +21,6 @@ body {
 html {
     scrollbar-color: #3AB3B3 #F5F5F5;
     scrollbar-width: thin;
-    zoom: 80% !important;
 }
 
 /*chrome scrollbar*/

@@ -7,7 +7,7 @@ import News from "./News";
 
 const Accounting = () => {
   return (
-    <div className="flex gap-3 w-[95%] mx-auto">
+    <div className="flex gap-3 w-[95%] mx-auto flex-wrap md:flex-nowrap">
       <div className="w-2/3 flex flex-col">
         <div className="bg-white p-5 shadow-lg">
           <h1 className="text-[#265E73] mb-2">Mein Buchhaltungsbüro</h1>

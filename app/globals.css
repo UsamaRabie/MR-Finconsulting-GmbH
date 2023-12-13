@@ -8,10 +8,12 @@ body {
 
 
 
+
 /*firefox scrollbar*/
 html {
     scrollbar-color: #3AB3B3 #F5F5F5;
     scrollbar-width: thin;
+    zoom: 80% !important;
 }
 
 /*chrome scrollbar*/
@@ -43,8 +45,37 @@ html {
     background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ffffff;
     -webkit-appearance: none;
     background-position-x: 120px;
+}
 
+
+.scrollbar-1 {
+  scrollbar-width: thin;
+  scrollbar-color: #D9D9D9 #F0F0F0;
+}
+.scrollbar-1::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-1::-webkit-scrollbar-track {
+  background-clip: content-box;
+  
+}
+.scrollbar-1::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2;
+}
+.scrollbar-1::-webkit-scrollbar-thumb:hover {
+  background-color: #c2c2c2;
+}
+.scrollbar-1::-webkit-scrollbar-corner, .scrollbar-1::-webkit-scrollbar-track {
+  background-color: #b0b7c4;
+}
+
+.stars svg{
+  width: 30px;
+  height: 30px;
 
 }
+
+
 
 

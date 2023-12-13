@@ -1,11 +1,10 @@
 import React from 'react'
-import Accounting from '../components/Accounting'
+import Appointment from '../components/Appointment'
 
 const page = () => {
   return (
     <div>
-      <Accounting/>
-
+        <Appointment/>
     </div>
   )
 }

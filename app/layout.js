@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
             <Sidebar />
             
             <div className="flex flex-col w-full mt-12">
-              <Search/>
+              {/* <Search/> */}
             {children}
             </div>
    

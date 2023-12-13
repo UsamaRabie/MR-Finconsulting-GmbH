@@ -81,9 +81,9 @@ const sidebar = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "Nachricht%20schreiben" ? "bg-[#3AB3B3] text-white" : ""
+                activeLink === "Nachricht-schreiben" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="/Nachricht schreiben"
+              href="/Nachricht-schreiben/FINANZBUCHHALTUNG "
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -119,9 +119,9 @@ const sidebar = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "Fax%20senden" ? "bg-[#3AB3B3] text-white" : ""
+                activeLink === "Fax-senden" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="/Fax senden"
+              href="/Fax-senden"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg

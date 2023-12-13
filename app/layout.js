@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@material-tailwind/react";
 import Sidebar from "./components/Sidebar";
-import Search from "./components/Search";
 
 const inter = Inter({ subsets: ["latin"] });
 

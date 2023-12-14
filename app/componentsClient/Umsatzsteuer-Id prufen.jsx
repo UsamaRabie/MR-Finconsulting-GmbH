@@ -2,13 +2,13 @@ import React from "react";
 
 function Umsatzsteuer() {
   return (
-    <div className="w-[80%] mx-auto bg-white ">
-      <h3 class="border-b-2 border-[#3AB3B3] text-lg w-[94%] mx-auto p-5 ">
+    <div className="w-[80%] mx-auto bg-white shadow-md p-7 pb-0">
+      <h3 class="border-b-2 border-[#3AB3B3] text-lg w-[94%] mx-auto ">
         Die Prüfung der Umsatzsteuer-Id erfolgt über eine Schnittstelle des
         Bundeszentralamts für Steuern, an die die von Ihnen eingegebenen Daten
         übermittelt werden. Das Ergebnis dieser Abfrage wird Ihnen hier
         dargestellt. Das Bundeszentralamt für Steuern stellt ebenfalls ein
-        <span className="text-[#3AB3B3]">Formular zur Überprüfung </span>
+        <span className="text-[#3AB3B3]"> Formular zur Überprüfung </span>
         bereit. Bitte beachten Sie auch die{" "}
         <span className="text-[#3AB3B3]">Fragen & Antworten.</span>
       </h3>
@@ -79,7 +79,7 @@ function Umsatzsteuer() {
       </div>
 
       <div className="text-end mx-3 pb-10">
-        <button className="bg-[#3AB3B3] rounded-3xl p-3 text-white min-w-[200px]">Prüfen</button>
+        <button className="bg-[#3AB3B3] rounded-3xl p-3 text-white min-w-[200px] transition-all duration-200 hover:bg-[#3da6a6]">Prüfen</button>
       </div>
     </div>
   );

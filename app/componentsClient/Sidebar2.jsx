@@ -140,9 +140,11 @@ const Sidebar2 = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "Checklisten" ? "bg-[#3AB3B3] text-white" : ""
+                path.startsWith("/ClientChecklisten") // Check if pathname starts with '/ClientChecklisten'
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="/Checklisten"
+              href="/ClientChecklisten/Finanzbuchhaltung"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -222,7 +224,7 @@ const Sidebar2 = () => {
                   ? "bg-[#3AB3B3] text-white"
                   : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href={"Neukunde/Allgemeine-Angaben"}
+              href={"/Neukunde/Allgemeine-Angaben"}
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -244,9 +246,11 @@ const Sidebar2 = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "Zeiterfassung" ? "bg-[#3AB3B3] text-white" : ""
+                path.startsWith("/Auftragsübersicht") // Check if pathname starts with '/Neukunde'
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="/Zeiterfassung"
+              href="/Auftragsubersicht/Wiederkehrende-Leistungen"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg

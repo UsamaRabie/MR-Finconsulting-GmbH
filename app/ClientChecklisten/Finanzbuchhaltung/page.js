@@ -1,10 +1,10 @@
 import React from 'react'
-import SuperAdminChecklist from '../components/SuperAdminChecklist'
+import Allgemeines from '../Allgemeines/page'
 
 function page() {
   return (
     <div>
-      <SuperAdminChecklist/>
+      <Allgemeines/>
     </div>
   )
 }

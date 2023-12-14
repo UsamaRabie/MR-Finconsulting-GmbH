@@ -18,7 +18,7 @@ function BELEGE() {
         <span className="text-[#3AB3B3] mx-3 p-4">BELEGE VOM PC AUSWÄHLEN</span>
     </div>
 
-      <div className="flex flex-col justify-center items-center bg-[#F8F9FA] gap-5 w-[94%] mx-auto my-5 p-5">
+      <div className="flex flex-col justify-center items-center bg-[#F8F9FA] gap-5 w-[94%] mx-auto my-5 p-10">
         <div>
           <svg
             width="61"
@@ -72,7 +72,7 @@ function BELEGE() {
         </select>      
         </div>
 
-        <div className="flex items-center justify-between pb-5" >
+        <div className="flex items-center justify-between p-10" >
         <h3 className="text-[#3AB3B3] mx-3">    ! Hinweis zu Dateiformaten</h3>
         <button className="bg-[#3AB3B3] text-white p-3 rounded-lg mx-3 transition-all duration-200 hover:bg-[#3da6a6]">Belege hochladen</button>
     

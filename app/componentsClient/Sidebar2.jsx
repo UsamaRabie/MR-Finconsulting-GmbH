@@ -30,12 +30,11 @@ const Sidebar2 = () => {
               <p className="font-bold">Mohamed Alaa</p>
             </div>
 
-            
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
                 activeLink === "mein" ? "bg-[#3AB3B3] text-white" : ""
               } mt-2 rounded-[15px] text-[#265E73 `}
-              href="mein"
+              href="/mein"
             >
               <div className="bg-[#4FD1C5] p-2 rounded-[12px] ">
                 <svg
@@ -63,7 +62,9 @@ const Sidebar2 = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "beratungstermin" ? "bg-[#3AB3B3] text-white" : ""
+                activeLink === "beratungstermin"
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="/beratungstermin"
             >
@@ -87,11 +88,11 @@ const Sidebar2 = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "Nachricht-schreiben"
+                path.startsWith("/Nachricht-schreiben") // Check if pathname starts with '/Nachricht-schreiben'
                   ? "bg-[#3AB3B3] text-white"
                   : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="/Nachricht-schreiben/FINANZBUCHHALTUNG "
+              href="/Nachricht-schreiben/Finanzbuchhaltung"
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg
@@ -217,9 +218,11 @@ const Sidebar2 = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "Aufgaben" ? "bg-[#3AB3B3] text-white" : ""
+                path.startsWith("/Neukunde") // Check if pathname starts with '/Neukunde'
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
               } mt-2 rounded-[15px] text-[#265E73`}
-              href="/Aufgaben"
+              href={"Neukunde/Allgemeine-Angaben"}
             >
               <div className="bg-white p-2 rounded-[12px]  ">
                 <svg

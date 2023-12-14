@@ -81,7 +81,9 @@ const sidebar = () => {
 
             <Link
               className={`flex items-center w-full h-12 px-3 transition-all duration-300 ${
-                activeLink === "Nachricht-schreiben" ? "bg-[#3AB3B3] text-white" : ""
+                path.startsWith("/Nachricht-schreiben") // Check if pathname starts with '/Nachricht-schreiben'
+                ? "bg-[#3AB3B3] text-white"
+                : ""
               } mt-2 rounded-[15px] text-[#265E73`}
               href="/Nachricht-schreiben/FINANZBUCHHALTUNG "
             >

@@ -1,39 +1,62 @@
+import InformationenClient from "@/app/componentsClient/InformationenClient";
 import React from "react";
 
 function Informationen() {
-  
-  return(
-    <div className="p-5 w-[80%] mx-auto bg-white mt-5">
-     <h1 className="text-[#265E73] p-5 font-bold">LEISTUNGEN MONATLICH</h1>  
-     <div className="flex items-center justify-between mx-10 bg-[#3AB3B3] w-full md:w-[50%] p-3 rounded-2xl">
-      <span className="text-white">Gesamt</span>
-      <span className="text-white">0,00€</span>
-     </div>
-
-     <h1  className="text-[#265E73] p-5 font-bold">LEISTUNGEN JÄHRLICH</h1>
-     <div className="flex items-center justify-between mx-10 bg-white w-full md:w-[50%] p-3 rounded-2xl">
-      <span className="text-[#265E73]">Jahresabschluss inkl. betrieblicher Steuererklärungen </span>
-      <span className="text-[#265E73]">1.000,00 €</span>
-     </div>
-
-     <div className="flex gap-10 items-center mt-10">
-      <span className="text-sm text-[#265E73]">U.05.35.01.01a</span>
-      <span className="text-sm text-[#265E73]">Aufstellung eines Jahresabschlusses (Bilanz und Gewinn- und Verlustrechnung) inkl. betrieblicher Steuererklärungen</span>
-     </div>
-
-     <div className="flex items-center justify-between mx-10 bg-[#3AB3B3] w-full md:w-[50%] p-3 rounded-2xl mt-10">
-      <span className="text-white">Gesamt</span>
-      <span className="text-white">1.000,00 €</span>
-     </div>
-
-     <div className="flex items-center justify-around mt-24">
-      <span className="text-[#265E73]">Datenschutzerklärung</span>
-      <span className="text-[#265E73]">AGB für Mandanten</span>
-      <span className="text-[#265E73]">Widerrufsbelehrung</span>
-      <span className="text-[#265E73]">Impressum</span>
-     </div>
+  return (
+    <div className="w-full md:w-[80%] h-full mx-auto bg-[#F8F9FA] flex flex-col md:flex-row items-center  gap-5">
+      <div className="w-full h-full bg-white p-5">
+        <h3 className="text-end p-5 text-[#265E73] font-bold text-lg">Datum: 14.10.2020</h3>
+         <InformationenClient text1={"Komfort Typ"} text2={"komfort"}/>
+         <InformationenClient text1={"Jahresumsatz"} text2={"29.164 €"}/>
+         <InformationenClient text1={"Jahresaufwand"} text2={"29.164 €"}/>
+         <InformationenClient text1={"Bilanzsumme"} text2={"29.164 €"}/>
+         <InformationenClient text1={"Jahresumsatz oder höherer Aufwand"} text2={"29.164 €"}/>
+         <InformationenClient text1={"Mittel Bilanzsumme / Jahresleistung"} text2={"29.164 €"}/>
+         <InformationenClient text1={"Jahresabschluss"} text2={"ja"}/>
+         <InformationenClient text1={"Jahr JAB"} text2={"2021"}/>
+         <InformationenClient text1={"Gew. Fertigstellung (JAB)"} text2={"01.06.2022"}/>
+        
       </div>
-  )
+
+      <div className="w-full h-full p-5 bg-white font-bold flex flex-col">
+      <div className="flex items-center pb-5 border-b-2 mb-7">
+        <label for="countries" class="mb-2 text-sm mr-5  w-[350px]  text-[#3AB3B3]">
+      {"  >> "}  Leistungen monatlich (x 12)
+        </label>
+        <input type="text" id="small-input" class="w-full block  p-2 text-gray-900 border border-gray-300 rounded-lg bg-white sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
+      </div>
+
+      <div className="flex items-center pb-5 border-b-2 mb-7">
+        <label for="countries" class="mb-2 text-sm mr-5  w-[350px]  text-[#3AB3B3]">
+      {"  >> "}     Leistungen jährlich
+        </label>
+        <input type="text" id="small-input" class="w-full block  p-2 text-gray-900 border border-gray-300 rounded-lg bg-white sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
+      </div>
+
+      <div className="flex items-center pb-5 border-b-2 mb-7">
+        <label for="countries" class="mb-2 text-sm mr-5  w-[350px] text-[#3AB3B3]">
+      {"  >> "}    Leistungen einmalig
+        </label>
+        <input type="text" id="small-input" class="w-full block  p-2 text-gray-900 border border-gray-300 rounded-lg bg-white sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
+      </div>
+
+
+      <div className="flex items-center pb-5 mb-7">
+        <label for="countries" class="mb-2 text-sm mr-5  w-[350px]  text-[#3AB3B3]">
+      {"  >> "}    Gesamt
+        </label>
+        <input type="text" id="small-input" class="w-full block  p-2 text-gray-900 border border-gray-300 rounded-lg bg-white sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
+      </div>
+
+
+      </div>
+
+    
+
+
+
+    </div>
+  );
 }
 
 export default Informationen;

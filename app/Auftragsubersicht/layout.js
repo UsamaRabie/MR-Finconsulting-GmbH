@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
               <Link className={`${activeLink === "Auftragsubersicht/Informationen" ? " bg-white text-[#3AB3B3] " : "text-[#265E73]" }  w-full p-3 font-bold`} href="Informationen">Informationen</Link>
               <Link className={`${activeLink === "Auftragsubersicht/Wiederkehrende-Leistungen" ? " bg-white text-[#3AB3B3]" : "text-[#265E73]"} w-full p-3 font-bold`} href="Wiederkehrende-Leistungen">Wiederkehrende-Leistungen</Link>
               <Link className={`${activeLink === "Auftragsubersicht/Einmalleistungen" ? " bg-white text-[#3AB3B3] " : "text-[#265E73]"} w-full p-3 font-bold`} href="Einmalleistungen">Einmalleistungen</Link>
-              <Link className={`${activeLink === "Auftragsubersicht/Vorschusse" ? " bg-white text-[#3AB3B3] " : "text-[#265E73]"} w-full p-3 font-bold`} href="Vorschüsse">Vorschusse</Link>
+              <Link className={`${activeLink === "Auftragsubersicht/Vorschusse" ? " bg-white text-[#3AB3B3] " : "text-[#265E73]"} w-full p-3 font-bold`} href="Vorschusse">Vorschüsse</Link>
               
             </div>
 

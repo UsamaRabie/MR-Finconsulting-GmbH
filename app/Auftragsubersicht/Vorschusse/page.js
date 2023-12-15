@@ -1,10 +1,11 @@
 import React from 'react'
-import Informationen from '../Informationen/page'
+import WiederkehrendeLeistungen from '../Wiederkehrende-Leistungen/page'
 
 function page() {
   return (
     <div>
-      <Informationen/>
+        <WiederkehrendeLeistungen/>
+
     </div>
   )
 }

@@ -1,6 +1,40 @@
-import React from 'react'
+"use client"
+
+import EmojiPicker, { EmojiStyle } from "emoji-picker-react"
+import { useState, useRef, useEffect } from "react"
 
 const Email = () => {
+
+  const [selectedEmoji, setSelectedEmoji] = useState("1f60a")
+  const [inputValue, setInputValue] = useState("")
+  const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false)
+  const buttonRef = useRef(null)
+
+  function onClick(emojiData, event) {
+    setInputValue(
+      (inputValue) =>
+        inputValue +
+        (emojiData.isCustom ? emojiData.unified : emojiData.emoji)
+    )
+    setSelectedEmoji(emojiData.unified)
+  }
+
+  const toggleEmojiPicker = () => {
+    setIsEmojiPickerOpen((prevState) => !prevState)
+  }
+
+  // Set the position of the emoji picker when it opens
+  useEffect(() => {
+    if (isEmojiPickerOpen && buttonRef.current) {
+      const buttonRect = buttonRef.current.getBoundingClientRect()
+      const pickerHeight = 300 // Adjust this value as needed
+      document.documentElement.style.setProperty(
+        "--emoji-picker-top",
+        `${buttonRect.top - pickerHeight}px`
+      )
+    }
+  }, [isEmojiPickerOpen])
+
   return (
     <div className="bg-white w-[80%] mx-auto shadow-lg rounded-t-lg">
     <div className="bg-[#3AB3B3] p-2 text-white rounded-t-lg">
@@ -27,6 +61,9 @@ const Email = () => {
         name=""
         id=""
         className="w-full !outline-none p-2 h-96 resize-none"
+        value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          
       ></textarea>
     </div>
 
@@ -72,7 +109,8 @@ const Email = () => {
             </svg>
           </button>
 
-          <button>
+          <button ref={buttonRef} onClick={toggleEmojiPicker}>
+          
             <svg
               width="20"
               height="20"
@@ -87,6 +125,25 @@ const Email = () => {
               />
             </svg>
           </button>
+          {isEmojiPickerOpen && (
+        <div
+          style={{
+            position: "absolute",
+            top: 450,
+            right:620,
+            
+            zIndex: 1,
+
+          }}
+          
+        >
+          <EmojiPicker
+            onEmojiClick={onClick}
+            autoFocusSearch={false}
+            emojiStyle={EmojiStyle.NATIVE}
+          />
+        </div>
+      )}
 
           <button>
             <svg
@@ -157,9 +214,14 @@ const Email = () => {
               />
             </svg>
           </button>
+   
+         
+       
         </div>
       </div>
     </div>
+
+
   </div>
   )
 }

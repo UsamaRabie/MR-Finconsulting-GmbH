@@ -1,6 +1,7 @@
 import React from 'react'
 import Allgemeines from '../Allgemeines/page'
 
+
 function page() {
   return (
     <div>

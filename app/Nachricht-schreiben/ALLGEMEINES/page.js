@@ -58,18 +58,10 @@ function Allgemeines() {
               <span> ungelesen</span>
             </button>
             <button className="text-[#B3B3B3] flex items-center gap-3 bg-[#F8F9FA] p-2 mx-2">
-              <svg
-                width="26"
-                height="20"
-                viewBox="0 0 26 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M-0.199219 -2.80005H26.2008V22.8H-0.199219V-2.80005Z"
-                  fill="#B3B3B3"
-                />
-              </svg>
+            <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 10L4.75 7.33333L10.25 12.6667L21.25 2L24 4.66667L10.25 18L2 10Z" fill="black" stroke="#B3B3B3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 
               <span>erledigt</span>
             </button>
@@ -100,9 +92,9 @@ function Allgemeines() {
             <span class="font-medium text-[#3AB3B3] ">AR</span>
           </div>
           <div className="flex  flex-col">
-            <span>Fehlende Unterlagen</span>
+            <span className="font-thin mb-1">Fehlende Unterlagen</span>
 
-            <span className="text-sm text-[#00000033]">
+            <span className="text-sm text-[#00000033] font-thin">
               von Asia Roushdy am 11.03.21 12:50
             </span>
           </div>
@@ -127,9 +119,9 @@ function Allgemeines() {
             <span class="font-medium text-[#3AB3B3] ">AR</span>
           </div>
           <div className="flex  flex-col">
-            <span>Fehlende Unterlagen</span>
+            <span className="font-thin mb-1">Fehlende Unterlagen</span>
 
-            <span className="text-sm text-[#00000033]">
+            <span className="text-sm text-[#00000033] font-thin">
               von Asia Roushdy am 11.03.21 12:50
             </span>
           </div>

@@ -126,7 +126,7 @@ const Email = () => {
             </svg>
           </button>
           {isEmojiPickerOpen && (
-        <div
+        <div 
           style={{
             position: "absolute",
             top: 450,

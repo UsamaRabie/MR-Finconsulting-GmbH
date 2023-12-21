@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@material-tailwind/react";
 import Sidebar from "./components/Sidebar";
 import Sidebar2 from "./componentsClient/Sidebar2";
+import Search from "./components/Search";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
             <Sidebar />
             
             <div className="flex flex-col w-full mt-12">
-              {/* <Search/> */}
+               <Search/>  
             {children}
             </div>
    

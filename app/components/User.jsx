@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 
 import {
@@ -9,22 +9,41 @@ import {
   Card,
   Typography,
   CardBody,
+  Dialog,
+  DialogBody,
+  DialogFooter,
+  DialogHeader,
 } from "@material-tailwind/react";
 import HoverMenu from "./HoverMenu";
+import Modal1 from "./Modal1";
+import Modal2 from "./Modal2";
 function User({ img, name, email }) {
-  const [open, setOpen] = React.useState(false);
+  const [isModal1Open, setIsModal1Open] = useState(false);
+  const [isModal2Open, setIsModal2Open] = useState(false);
 
+  const openModal1 = () => {
+    setIsModal1Open(true);
+    setIsModal2Open(false);
+  };
+
+  const openModal2 = () => {
+    setIsModal1Open(false);
+    setIsModal2Open(true);
+  };
+
+  const closeModal = () => {
+    setIsModal1Open(false);
+    setIsModal2Open(false);
+  };
+
+  const [open, setOpen] = React.useState(false);
   const toggleOpen = () => setOpen((cur) => !cur);
 
-  const pathname = usePathname()
-
+  const pathname = usePathname();
 
   return (
     <div className="  w-full mx-auto bg-white border-b-2 last:border-b-0">
-      <button
-        className="flex w-full items-center justify-between bg-white py-2  "
-        onClick={toggleOpen}
-      >
+      <button className="flex w-full items-center justify-between bg-white py-2 cursor-default">
         <div className="flex flex-row w-full  border-solid py-2  border-gray-500">
           <Image
             width={50}
@@ -41,10 +60,18 @@ function User({ img, name, email }) {
 
         <div className="">
           {pathname === "/Telefon" ? (
-        <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M26.9843 18.1295C26.7436 19.7556 25.8452 21.2481 24.4569 22.3285C23.0686 23.4088 21.2854 24.0029 19.4403 24C8.72116 24 1.22159e-05 16.2479 1.22159e-05 6.71982C-0.00329531 5.07976 0.665151 3.4947 1.8805 2.26069C3.09586 1.02669 4.775 0.228127 6.60433 0.0141573C7.06691 -0.0360501 7.53537 0.0480719 7.93975 0.253966C8.34413 0.45986 8.66276 0.776482 8.84806 1.15657L11.6993 6.81462V6.82902C11.8412 7.11997 11.8998 7.43762 11.8699 7.7536C11.8399 8.06959 11.7224 8.37406 11.5279 8.63984C11.5036 8.67224 11.4779 8.70224 11.4509 8.73224L8.64016 11.6939C9.65133 13.5203 11.8006 15.4139 13.8823 16.3151L17.1683 13.8299C17.2005 13.8058 17.2343 13.7833 17.2695 13.7627C17.5683 13.5856 17.912 13.4775 18.2696 13.4481C18.6271 13.4188 18.9873 13.4692 19.3175 13.5947L19.335 13.6019L25.695 16.1351C26.1234 16.2992 26.4804 16.5822 26.7128 16.9417C26.9452 17.3012 27.0405 17.7179 26.9843 18.1295Z" fill="#265E73"/>
-        </svg>
-        
+            <svg
+              width="27"
+              height="24"
+              viewBox="0 0 27 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26.9843 18.1295C26.7436 19.7556 25.8452 21.2481 24.4569 22.3285C23.0686 23.4088 21.2854 24.0029 19.4403 24C8.72116 24 1.22159e-05 16.2479 1.22159e-05 6.71982C-0.00329531 5.07976 0.665151 3.4947 1.8805 2.26069C3.09586 1.02669 4.775 0.228127 6.60433 0.0141573C7.06691 -0.0360501 7.53537 0.0480719 7.93975 0.253966C8.34413 0.45986 8.66276 0.776482 8.84806 1.15657L11.6993 6.81462V6.82902C11.8412 7.11997 11.8998 7.43762 11.8699 7.7536C11.8399 8.06959 11.7224 8.37406 11.5279 8.63984C11.5036 8.67224 11.4779 8.70224 11.4509 8.73224L8.64016 11.6939C9.65133 13.5203 11.8006 15.4139 13.8823 16.3151L17.1683 13.8299C17.2005 13.8058 17.2343 13.7833 17.2695 13.7627C17.5683 13.5856 17.912 13.4775 18.2696 13.4481C18.6271 13.4188 18.9873 13.4692 19.3175 13.5947L19.335 13.6019L25.695 16.1351C26.1234 16.2992 26.4804 16.5822 26.7128 16.9417C26.9452 17.3012 27.0405 17.7179 26.9843 18.1295Z"
+                fill="#265E73"
+              />
+            </svg>
           ) : pathname === "/Videokonferenz" ? (
             <svg
               width="30"
@@ -59,16 +86,113 @@ function User({ img, name, email }) {
               />
             </svg>
           ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.25 23.25C2.5625 23.25 1.97375 23.005 1.48375 22.515C0.993752 22.025 0.749169 21.4367 0.750002 20.75V5.12501C0.750002 4.81251 0.802085 4.53126 0.906252 4.28126C1.01042 4.03126 1.14584 3.79168 1.3125 3.56251L3.0625 1.43751C3.22917 1.20834 3.4375 1.03626 3.6875 0.921259C3.9375 0.806259 4.20834 0.749176 4.5 0.750009H19.5C19.7917 0.750009 20.0625 0.807092 20.3125 0.921259C20.5625 1.03543 20.7708 1.20751 20.9375 1.43751L22.6875 3.56251C22.8542 3.79168 22.9896 4.03126 23.0938 4.28126C23.1979 4.53126 23.25 4.81251 23.25 5.12501V20.75C23.25 21.4375 23.005 22.0263 22.515 22.5163C22.025 23.0063 21.4367 23.2508 20.75 23.25H3.25ZM3.75 4.50001H20.25L19.1875 3.25001H4.8125L3.75 4.50001ZM12 19.5L17 14.5L15.25 12.75L13.25 14.75V9.50001H10.75V14.75L8.75 12.75L7 14.5L12 19.5Z" fill="#265E73"/>
-            </svg>
-            
+
+            <div className="flex items-center gap-5">
+              
+              <svg
+                onClick={openModal1}
+                class="cursor-pointer text-[#3AB3B3] transition-all duration-200 hover:rotate-90"
+                width="25"
+                height="30"
+                viewBox="0 0 31 38"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="1.5"
+                  y="1.5"
+                  width="28"
+                  height="35"
+                  fill="white"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+                <line
+                  x1="5.94727"
+                  y1="10"
+                  x2="25.0522"
+                  y2="10"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <line
+                  x1="6"
+                  y1="19"
+                  x2="25.105"
+                  y2="19"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <line
+                  x1="6"
+                  y1="27"
+                  x2="25.105"
+                  y2="27"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+
+              <svg
+                onClick={openModal2}
+                class="cursor-pointer text-[#3AB3B3] transition-all duration-200 hover:rotate-180"
+                width="25"
+                height="20"
+                viewBox="0 0 33 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="1.5"
+                  y="3.5"
+                  width="27"
+                  height="17"
+                  fill="white"
+                  stroke="#3AB3B3"
+                  stroke-width="3"
+                />
+                <path
+                  d="M14.0046 14.9037C13.9514 15.4534 14.354 15.9421 14.9037 15.9953L23.8618 16.8623C24.4115 16.9155 24.9003 16.513 24.9535 15.9632C25.0067 15.4135 24.6042 14.9248 24.0545 14.8716L16.0917 14.101L16.8623 6.13817C16.9155 5.58846 16.513 5.0997 15.9632 5.0465C15.4135 4.9933 14.9248 5.39581 14.8716 5.94552L14.0046 14.9037ZM31.3643 0.22807L14.3643 14.2281L15.6357 15.7719L32.6357 1.77193L31.3643 0.22807Z"
+                  fill="#3AB3B3"
+                />
+              </svg>
+
+              {isModal1Open && <Modal1 isOpen={true} onClose={closeModal} />}
+              {isModal2Open && <Modal2 isOpen={true} onClose={closeModal} />}
+
+              <svg
+                className="cursor-pointer transition-all duration-200 hover:rotate-180"
+                onClick={toggleOpen}
+                width="15"
+                height="10"
+                viewBox="0 0 15 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 9.99998C7.32063 9.99998 7.14664 9.96181 6.97803 9.88547C6.80942 9.80914 6.66951 9.70736 6.5583 9.58013L0.369955 2.55725C0.123318 2.27735 0 1.92111 0 1.48855C0 1.05598 0.123318 0.699743 0.369955 0.419846C0.616591 0.139948 0.930493 0 1.31166 0C1.69283 0 2.00673 0.139948 2.25336 0.419846L7.5 6.37403L12.7466 0.419846C12.9933 0.139948 13.3072 0 13.6883 0C14.0695 0 14.3834 0.139948 14.63 0.419846C14.8767 0.699743 15 1.05598 15 1.48855C15 1.92111 14.8767 2.27735 14.63 2.55725L8.4417 9.58013C8.30717 9.7328 8.16143 9.8412 8.00448 9.90532C7.84753 9.96944 7.67937 10.001 7.5 9.99998Z"
+                  fill="#3AB3B3"
+                />
+              </svg>
+
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.25 23.25C2.5625 23.25 1.97375 23.005 1.48375 22.515C0.993752 22.025 0.749169 21.4367 0.750002 20.75V5.12501C0.750002 4.81251 0.802085 4.53126 0.906252 4.28126C1.01042 4.03126 1.14584 3.79168 1.3125 3.56251L3.0625 1.43751C3.22917 1.20834 3.4375 1.03626 3.6875 0.921259C3.9375 0.806259 4.20834 0.749176 4.5 0.750009H19.5C19.7917 0.750009 20.0625 0.807092 20.3125 0.921259C20.5625 1.03543 20.7708 1.20751 20.9375 1.43751L22.6875 3.56251C22.8542 3.79168 22.9896 4.03126 23.0938 4.28126C23.1979 4.53126 23.25 4.81251 23.25 5.12501V20.75C23.25 21.4375 23.005 22.0263 22.515 22.5163C22.025 23.0063 21.4367 23.2508 20.75 23.25H3.25ZM3.75 4.50001H20.25L19.1875 3.25001H4.8125L3.75 4.50001ZM12 19.5L17 14.5L15.25 12.75L13.25 14.75V9.50001H10.75V14.75L8.75 12.75L7 14.5L12 19.5Z"
+                  fill="#265E73"
+                />
+              </svg>
+            </div>
           )}
         </div>
       </button>
-   
-            
-      <Collapse  open={pathname==="/"?open :false}>
+
+      <Collapse open={pathname === "/" ? open : false}>
         <Card className="my-4 mx-auto  bg-[#3AB3B3] p-5">
           <CardBody className="flex bg-white h-6 items-center justify-center rounded-full">
             <HoverMenu

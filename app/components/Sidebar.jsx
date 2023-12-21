@@ -48,7 +48,7 @@ const Sidebar = () => {
     [router.pathname]
   );
   const wrapperClasses =
-    "h-screen px-4 pt-8 pb-4 bg-light flex justify-between flex-col " +
+    "h-screen px-4 pt- pb-4 bg-light flex justify-between flex-col " +
     (toggleCollapse ? "w-20" : "w-80 ");
 
   const collapseIconClasses =

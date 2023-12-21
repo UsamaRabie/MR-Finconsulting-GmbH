@@ -17,15 +17,12 @@ export default function RootLayout({ children }) {
               <Link className={`  ${activeLink === "Neukunde/Personliche-Angaben" ? "border-b-4 border-solid border-[#3AB3B3] " : ""}`} href="Personliche-Angaben">Personliche-Angaben</Link>
               <Link className={`  ${activeLink === "Neukunde/Bankverbindung" ? "border-b-4 border-solid border-[#3AB3B3] " : ""}`} href="Bankverbindung">Bankverbindung</Link>
               <Link className={`  ${activeLink === "Neukunde/Finanzamt" ? "border-b-4 border-solid border-[#3AB3B3]" : ""}`} href="Finanzamt">Finanzamt</Link>
+              <Link className={`  ${activeLink === "Neukunde/Berechtigungen-und-Vollmachten" ? "border-b-4 border-solid border-[#3AB3B3]" : ""}`} href="Berechtigungen-und-Vollmachten">Berechtigungen und Vollmachten</Link>
             </div>
 
             {children}
 
-            <div className="flex w-[90%] justify-end items-center gap-5  mt-5 mb-20">
-              <button className="p-2 rounded-lg text-white text-sm bg-[#979797]">Personalnummer</button>
-              <button className="p-2 rounded-lg text-white text-sm bg-[#3AB3B3]">Vollstandigkeitsprufung</button>
-              <button className="p-2 rounded-lg text-white text-sm bg-[#3AB3B3]">Arbeitnehmer erstellen</button>
-            </div>
+          
    
           </div>
   );

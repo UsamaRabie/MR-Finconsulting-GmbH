@@ -16,10 +16,10 @@ export default function RootLayout({ children }) {
         <body className={`${inter.className} bg-[#F8F9FA`}>
           <div className="flex">
             {/* <Sidebar2/> */}
-            <Sidebar />
+            <Sidebar2 />
             
             <div className="flex flex-col w-full mt-12">
-               <Search/>  
+               {/* <Search/>   */}
             {children}
             </div>
    

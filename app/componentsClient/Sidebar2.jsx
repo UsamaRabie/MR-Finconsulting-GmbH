@@ -16,6 +16,7 @@ import {
   LogoIcon,
   CollapsIcon,
 } from "./icons";
+import Image from "next/image";
 
 
 
@@ -51,6 +52,7 @@ const menuItems = [
   { id: 9, label: "Auftragsübersicht", icon: Icon9, link: "/Auftragsubersicht/Wiederkehrende-Leistungen" },
   { id: 10, label: "Rechnungen", icon: Icon10, link: "/Rechnungen" },
   { id: 11, label: "Umsatzsteuer-Id prüfen", icon: Icon11, link: "/umsatzsteuer" },
+ 
 ];
 
 const Sidebar2 = () => {
@@ -110,7 +112,20 @@ const Sidebar2 = () => {
           )}
         </div>
         
-        <div className="flex flex-col items-start mt-3">
+        <div className="flex flex-col items-start">
+
+        <div className="flex justify-center items-center gap-4">
+              <Image
+                src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                width={50}
+                height={50}
+                className="rounded-full w-12 h-12 object-cover"
+              ></Image>
+
+              {!toggleCollapse&&<p className="font-bold text-[#265E73]">Mohamed Alaa</p>}
+
+              
+            </div>
           {menuItems.map(({ icon: Icon, ...menu }, index) => {
             const classes = getNavItemClasses(menu);
             return (

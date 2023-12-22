@@ -142,6 +142,30 @@ const Sidebar2 = () => {
 
                 ${toggleCollapse&&"border-none"}
 
+                ${
+                  menu.link==="/Neukunde/Allgemeine-Angaben"&&activeLink.startsWith("/Neukunde")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
+
+                ${
+                  menu.link==="/Auftragsubersicht/Wiederkehrende-Leistungen" &&activeLink.startsWith("/Auftragsubersicht")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
+
+                ${
+                  menu.link==="/ClientChecklisten/Finanzbuchhaltung" &&activeLink.startsWith("/ClientChecklisten")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
+
+                ${
+                  menu.link==="/Nachricht-schreiben/Finanzbuchhaltung" &&activeLink.startsWith("/Nachricht-schreiben")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
+
                 `
               }
               >

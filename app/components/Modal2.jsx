@@ -32,7 +32,31 @@ const Modal2 = ({ isOpen, onClose }) => {
               exit={{ y: 50, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <p>lakdfsladfskladskldfsds</p>
+              <div>
+                <div className="text-[#7B838B] text-2xl py-4 text-center">Geäst</div>
+                <div className="m-3 bg-white rounded-xl ">
+                  <div className="flex flex-col gap-3 p-5 mx-14 border-b-2 ">
+                    <span className="text-[#156585]">Hannover</span> 
+                    <span className="text-[#718096]">freduardo@simmmple.com</span>
+                    </div>
+                  <div className="flex flex-col gap-3 p-5 mx-14 border-b-2 ">
+                    <span className="text-[#156585]">Berlin</span> 
+                    <span className="text-[#718096]">laurent@simmmple.com</span> 
+                    </div>
+                  <div className="flex flex-col gap-3 p-5 mx-14 border-b-2 ">
+                    <span className="text-[#156585]">Dortmund</span> 
+                    <span className="text-[#718096]">daniel@simmmple.com</span> 
+                    </div>
+                  <div className="flex flex-col gap-3 p-5 mx-14 border-b-2 ">
+                  <span className="text-[#156585]">Essen</span>  
+                  <span className="text-[#718096]">esthera@simmmple.com</span>  
+                  </div>
+                  <div className="flex flex-col gap-3 p-5 mx-14 border-b-2 ">
+                    <span className="text-[#156585]">Düsseldorf</span> 
+                    <span className="text-[#718096]">alexa@simmmple.com</span> 
+                    </div>
+                </div>
+              </div>
 
               <div className="flex justify-end mt-5">
                 <button

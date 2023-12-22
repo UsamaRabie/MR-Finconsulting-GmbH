@@ -80,6 +80,7 @@ const Card = () => {
         name={"usama"}
         email={"usamarabie21@gmail.com"}
       />
+      
     </div>
     </>
   );

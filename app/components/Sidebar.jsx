@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useState, useMemo } from "react";
-
 
 import Icon1 from "./icons/Icon1";
 import Icon2 from "./icons/Icon2";
@@ -23,12 +22,17 @@ import { LogoIcon } from "../componentsClient/icons";
 const menuItems = [
   { id: 1, label: "Standort", icon: Icon1, link: "/" },
   { id: 2, label: "Nachrichten", icon: Icon2, link: "/Nachrichten" },
-  {id: 3, label: "Nachricht schreiben",icon: Icon3,link: "/Nachricht-schreiben/Finanzbuchhaltung",},
+  {
+    id: 3,
+    label: "Nachricht schreiben",
+    icon: Icon3,
+    link: "/Nachricht-schreiben/Finanzbuchhaltung",
+  },
   { id: 4, label: "Fax senden", icon: Icon4, link: "/Fax-senden" },
-  {id: 5, label: "Checklisten",icon: Icon5,link: "/Checklisten",},
+  { id: 5, label: "Checklisten", icon: Icon5, link: "/Checklisten" },
   { id: 6, label: "Telefon", icon: Icon6, link: "/Telefon" },
-  {  id: 7, label: "Videokonferenz",icon: Icon7,  link: "/Videokonferenz",},
-  {id: 8, label: "Kalender",icon: Icon8,link: "/Kalender",},
+  { id: 7, label: "Videokonferenz", icon: Icon7, link: "/Videokonferenz" },
+  { id: 8, label: "Kalender", icon: Icon8, link: "/Kalender" },
   { id: 9, label: "Aufträge", icon: Icon9, link: "/Aufrtage" },
   { id: 10, label: "Aufgaben", icon: Icon10, link: "/Aufgaben" },
   { id: 11, label: "Zeiterfassung", icon: Icon11, link: "/Zeiterfassung" },
@@ -51,9 +55,9 @@ const Sidebar = () => {
     "h-screen px-4 pt- pb-4 bg-light flex justify-between flex-col " +
     (toggleCollapse ? "w-20" : "w-80 ");
 
-  const collapseIconClasses =
-  !toggleCollapse?"p-4 rounded absolute right-0 mt-12 " 
-    :"rotate-180 "
+  const collapseIconClasses = !toggleCollapse
+    ? "p-4 rounded absolute right-0 mt-12 "
+    : "rotate-180 ";
 
   const getNavItemClasses = (menu) =>
     "flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap " +
@@ -69,7 +73,7 @@ const Sidebar = () => {
 
   const path = usePathname();
   let activeLink = path.slice(0);
-
+  
 
   return (
     <div
@@ -84,7 +88,7 @@ const Sidebar = () => {
             <LogoIcon />
           </div>
           {isCollapsible && (
-            <button 
+            <button
               className={collapseIconClasses}
               onClick={handleSidebarToggle}
             >
@@ -92,41 +96,68 @@ const Sidebar = () => {
             </button>
           )}
         </div>
-        
+
         <div className="flex flex-col items-start mt-3">
           {menuItems.map(({ icon: Icon, ...menu }, index) => {
             const classes = getNavItemClasses(menu);
             return (
-              
-               
               <Link
-                key={index}
-                href={menu.link}
-                className={`flex items-center w-full h-12 px-3  hover:border-2 border-[#4FD1C5] ${
+              key={index}
+              href={menu.link}
+              className={`
+                flex items-center w-full h-12 px-3 mt-2 rounded-[15px] text-[#265E73] 
+                ${
                   activeLink === menu.link && !toggleCollapse
                     ? "bg-[#3AB3B3] text-white"
                     : ""
-                } mt-2 rounded-[15px] text-[#265E73 
+                }
+                ${
+                  !toggleCollapse
+                    ? "transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
+                    : "border-none"
+                }
+                ${
+                  menu.link==="/Nachricht-schreiben/Finanzbuchhaltung"&&activeLink.startsWith("/Nachricht-schreiben")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
 
-                ${toggleCollapse&&"border-none"}
+                ${
+                  menu.link==="/Aufrtage"&&activeLink.startsWith("/Aufrtage")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
 
-                `
-              }
-              >
+                ${
+                  menu.link==="/"&&activeLink.startsWith("/Neuer-Angestellter")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
+                ${
+                  menu.link==="/"&&activeLink.startsWith("/Neukunde")
+                  ? "bg-[#3AB3B3] text-white"
+                  : ""
+                }
+               
+              `}
+            >
+              {/* Link content */}
+         
                 <div
                   id="x"
                   className={`bg-white p-2 rounded-[12px] mr-2  ${
-                    
                     index === 0
                       ? "first:bg-[#4FD1C5] p-2 rounded-[12px]"
                       : "bg-white p-2 rounded-[12px]  "
                   }
 
-                  ${toggleCollapse&& activeLink === menu.link ? "border-2 border-[#4FD1C5]" : ""  }`
-                
-                }
+                  ${
+                    toggleCollapse && activeLink === menu.link
+                      ? "border-2 border-[#4FD1C5]"
+                      : ""
+                  }`}
                 >
-                  <Icon/>
+                  <Icon />
                 </div>
                 {!toggleCollapse && (
                   <span className={"text-sm font-medium text-text-light"}>
@@ -134,12 +165,9 @@ const Sidebar = () => {
                   </span>
                 )}
               </Link>
-
-      
             );
           })}
         </div>
-
       </div>
     </div>
   );

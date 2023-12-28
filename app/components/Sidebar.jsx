@@ -16,17 +16,27 @@ import Icon10 from "./icons/Icon10";
 import Icon11 from "./icons/Icon11";
 import Icon12 from "./icons/Icon12";
 import Icon13 from "./icons/Icon13";
+import Icon14 from "./icons/Icon14";
 import CollapsIcon from "./icons/CollapsIcon";
 
 import { LogoIcon } from "../componentsClient/icons";
 const menuItems = [
   { id: 1, label: "Standort", icon: Icon1, link: "/" },
-  { id: 2, label: "Nachrichten", icon: Icon2, link: "/Nachrichten" },
+  {
+    id: 2,
+    label: "Nachrichten",
+    icon: Icon2,
+    subMenu: [
+      { id: 21, label: "Posteingang", link: "/Posteingang" },
+      { id: 22, label: " Erledigt", link: "/Erledigt" },
+      { id: 23, label: "Gesendet", link: "/Gesendet" },
+    ],
+  },
   {
     id: 3,
     label: "Nachricht schreiben",
     icon: Icon3,
-    link: "/Nachricht-schreiben/Finanzbuchhaltung",
+    link: "/Nachricht-schreiben",
   },
   { id: 4, label: "Fax senden", icon: Icon4, link: "/Fax-senden" },
   { id: 5, label: "Checklisten", icon: Icon5, link: "/Checklisten" },
@@ -38,6 +48,7 @@ const menuItems = [
   { id: 11, label: "Zeiterfassung", icon: Icon11, link: "/Zeiterfassung" },
   { id: 12, label: "Produktivität", icon: Icon12, link: "/Produktivitat" },
   { id: 13, label: "kalkulator Neukunde", icon: Icon13, link: "/kalkulator" },
+  { id: 14, label: "Teamleitung", icon: Icon14, link: "/Teamleitung" },
 ];
 
 const Sidebar = () => {
@@ -73,7 +84,6 @@ const Sidebar = () => {
 
   const path = usePathname();
   let activeLink = path.slice(0);
-  
 
   return (
     <div
@@ -84,8 +94,13 @@ const Sidebar = () => {
     >
       <div className="flex flex-col">
         <div className="flex items-center justify-between relative ">
-          <div className="flex items-center pl-1 gap-4">
+          <div className="flex items-center pl-1 gap-4 ic">
             <LogoIcon />
+            {!toggleCollapse && (
+              <p className="text-[#156585] font-semibold text-sm">
+                MR Finconsulting GmbH
+              </p>
+            )}
           </div>
           {isCollapsible && (
             <button
@@ -98,73 +113,119 @@ const Sidebar = () => {
         </div>
 
         <div className="flex flex-col items-start mt-3">
-          {menuItems.map(({ icon: Icon, ...menu }, index) => {
+          {menuItems.map(({ icon: Icon, subMenu, ...menu }, index) => {
             const classes = getNavItemClasses(menu);
             return (
-              <Link
-              key={index}
-              href={menu.link}
-              className={`
-                flex items-center w-full h-12 px-3 mt-2 rounded-[15px] text-[#265E73] 
-                ${
-                  activeLink === menu.link && !toggleCollapse
-                    ? "bg-[#3AB3B3] text-white"
-                    : ""
-                }
-                ${
-                  !toggleCollapse
-                    ? "transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
-                    : "border-none"
-                }
-                ${
-                  menu.link==="/Nachricht-schreiben/Finanzbuchhaltung"&&activeLink.startsWith("/Nachricht-schreiben")
-                  ? "bg-[#3AB3B3] text-white"
-                  : ""
-                }
-
-                ${
-                  menu.link==="/Aufrtage"&&activeLink.startsWith("/Aufrtage")
-                  ? "bg-[#3AB3B3] text-white"
-                  : ""
-                }
-
-                ${
-                  menu.link==="/"&&activeLink.startsWith("/Neuer-Angestellter")
-                  ? "bg-[#3AB3B3] text-white"
-                  : ""
-                }
-                ${
-                  menu.link==="/"&&activeLink.startsWith("/Neukunde")
-                  ? "bg-[#3AB3B3] text-white"
-                  : ""
-                }
-               
-              `}
-            >
-              {/* Link content */}
-         
-                <div
-                  id="x"
-                  className={`bg-white p-2 rounded-[12px] mr-2  ${
-                    index === 0
-                      ? "first:bg-[#4FD1C5] p-2 rounded-[12px]"
-                      : "bg-white p-2 rounded-[12px]  "
-                  }
-
-                  ${
-                    toggleCollapse && activeLink === menu.link
-                      ? "border-2 border-[#4FD1C5]"
-                      : ""
-                  }`}
-                >
-                  <Icon />
-                </div>
-                {!toggleCollapse && (
-                  <span className={"text-sm font-medium text-text-light"}>
-                    {menu.label}
-                  </span>
+              <div key={index} className="relative w-full">
+                {subMenu ? (
+                  // Render submenu
+                  <div className="relative group w-full ">
+                    <div
+                      className={`text-[#265E73] flex items-center h-12 px-3 mt-2 rounded-[15px] cursor-pointer group ${
+                        activeLink === menu.link && !toggleCollapse
+                          ? "bg-[#3AB3B3] text-white"
+                          : ""
+                      } ${
+                        !toggleCollapse
+                          ? "transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
+                          : "border-none"
+                      }`}
+                    >
+                      <div
+                        className={`p-2 rounded-[12px] mr-2 ${
+                          index === 0
+                            ? "first:bg-[#4FD1C5] p-2 rounded-[12px]"
+                            : "bg-white p-2 rounded-[12px]"
+                        } ${
+                          toggleCollapse && activeLink === menu.link
+                            ? "border-2 border-[#4FD1C5]"
+                            : ""
+                        }`}
+                      >
+                        <Icon />
+                      </div>
+                      {!toggleCollapse && (
+                        <span className="text-sm font-medium text-text-light">
+                          {menu.label}
+                        </span>
+                      )}
+                    </div>
+                    <div className="">
+                      {!toggleCollapse&&subMenu.map((submenuItem) => (
+                        <Link
+                          key={submenuItem.id}
+                          href={submenuItem.link}
+                          className={`text-sm hover:border-[1px] hover:rounded-[15px] w-[128px] flex flex-col py-1 mb-3 ml-10 pl-4 text-[#265E739C] last:mb-0 ${
+                            activeLink === submenuItem.link
+                              ? "border-[1px] border-[#D9D9D9] rounded-[15px]"
+                              : ""
+                          }`}
+                        >
+                          {submenuItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  // Render regular menu item
+                  <Link
+                    key={index}
+                    href={menu.link}
+                    className={`flex items-center w-full h-12 px-3 mt-2 rounded-[15px] text-[#265E73] ${
+                      activeLink === menu.link && !toggleCollapse
+                        ? "bg-[#3AB3B3] text-white"
+                        : ""
+                    } ${
+                      !toggleCollapse
+                        ? "transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
+                        : "border-none"
+                    } ${
+                      menu.link === "/Nachricht-schreiben/Finanzbuchhaltung" &&
+                      activeLink.startsWith("/Nachricht-schreiben")
+                        ? "bg-[#3AB3B3] text-white"
+                        : ""
+                    } ${
+                      menu.link === "/Aufrtage" &&
+                      activeLink.startsWith("/Aufrtage")
+                        ? "bg-[#3AB3B3] text-white"
+                        : ""
+                    } ${
+                      menu.link === "/" &&
+                      activeLink.startsWith("/Neuer-Angestellter")
+                        ? "bg-[#3AB3B3] text-white"
+                        : ""
+                    } ${
+                      menu.link === "/" && activeLink.startsWith("/Neukunde")
+                        ? "bg-[#3AB3B3] text-white"
+                        : ""
+                    }
+                    
+                    
+                    `}
+                  >
+                    {/* Link content */}
+                    <div
+                      id="x"
+                      className={`bg-white p-2 rounded-[12px] mr-2 ${
+                        index === 0
+                          ? "first:bg-[#4FD1C5] p-2 rounded-[12px]"
+                          : "bg-white p-2 rounded-[12px]"
+                      } ${
+                        toggleCollapse && activeLink === menu.link
+                          ? "border-2 border-[#4FD1C5]"
+                          : ""
+                      }`}
+                    >
+                      <Icon />
+                    </div>
+                    {!toggleCollapse && (
+                      <span className="text-sm font-medium text-text-light">
+                        {menu.label}
+                      </span>
+                    )}
+                  </Link>
                 )}
-              </Link>
+              </div>
             );
           })}
         </div>

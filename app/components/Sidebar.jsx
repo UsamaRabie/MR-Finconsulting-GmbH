@@ -94,7 +94,7 @@ const Sidebar = () => {
     >
       <div className="flex flex-col">
         <div className="flex items-center justify-between relative ">
-          <div className="flex items-center pl-1 gap-4 ic">
+          <div className="flex items-center pl-1 gap-4 border-b-2 pb-2 mt-2">
             <LogoIcon />
             {!toggleCollapse && (
               <p className="text-[#156585] font-semibold text-sm">
@@ -151,19 +151,20 @@ const Sidebar = () => {
                       )}
                     </div>
                     <div className="">
-                      {!toggleCollapse&&subMenu.map((submenuItem) => (
-                        <Link
-                          key={submenuItem.id}
-                          href={submenuItem.link}
-                          className={`text-sm hover:border-[1px] hover:rounded-[15px] w-[128px] flex flex-col py-1 mb-3 ml-10 pl-4 text-[#265E739C] last:mb-0 ${
-                            activeLink === submenuItem.link
-                              ? "border-[1px] border-[#D9D9D9] rounded-[15px]"
-                              : ""
-                          }`}
-                        >
-                          {submenuItem.label}
-                        </Link>
-                      ))}
+                      {!toggleCollapse &&
+                        subMenu.map((submenuItem) => (
+                          <Link
+                            key={submenuItem.id}
+                            href={submenuItem.link}
+                            className={`text-sm hover:border-[1px] hover:rounded-[15px] w-[128px] flex flex-col py-1 mb-3 ml-10 pl-4 text-[#265E739C] last:mb-0 ${
+                              activeLink === submenuItem.link
+                                ? "border-[1px] border-[#D9D9D9] rounded-[15px]"
+                                : ""
+                            }`}
+                          >
+                            {submenuItem.label}
+                          </Link>
+                        ))}
                     </div>
                   </div>
                 ) : (

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { Collapse } from "@material-tailwind/react";
 
-function UserPostien({ img, name, email, time ,text}) {
+function UserPostienKalkulator({ img, name, email, time, text }) {
   const [open, setOpen] = React.useState(false);
   const toggleOpen = () => setOpen((cur) => !cur);
 
@@ -25,7 +25,6 @@ function UserPostien({ img, name, email, time ,text}) {
           <div className="flex flex-col items-start pt-2">
             <p className="text-[#2D3748] font-bold">{name}</p>
             <p className="text-[#718096]">{email}</p>
-            <p className="text-[#00000033]">{time}</p>
           </div>
         </div>
 
@@ -51,13 +50,41 @@ function UserPostien({ img, name, email, time ,text}) {
 
       <Collapse open={open}>
         <div className="mb-10">
-          <p className="text-[#00000096] text-xl p-3">
-              {text}
-          </p>
+          <p className="text-[#265E73] text-xl mx-24">{time}</p>
+          {text.map((item) => {
+            return (
+              <div key={item} className="flex items-center gap-8 mx-10">
+                <svg
+                  width="23"
+                  height="13"
+                  viewBox="0 0 23 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.0642 6.47266L1.99993 6.55977"
+                    stroke="#4FD1C5"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14.0213 2.02904L20.0643 6.47096L14.0644 10.971"
+                    stroke="#4FD1C5"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                <p className="text-[#265E73] text-xl p-3">{item}</p>
+              </div>
+            );
+          })}
         </div>
       </Collapse>
     </div>
   );
 }
 
-export default UserPostien;
+export default UserPostienKalkulator;

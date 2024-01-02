@@ -51,6 +51,7 @@ const CardPostien = () => {
           name={"Alexa Liras"}
           email={"alexa@simmmple.com"}
           time={"11.03.21 12:50 am"}
+          text={"Guten Tag, Bi Belege hochladen Am 1. Juni war der geplante Fertigstellungstermin für den letztmaligen Jahresabschluss."}
         />
         <UserPostien
           img={
@@ -59,6 +60,8 @@ const CardPostien = () => {
           name={"Alexa Liras"}
           email={"alexa@simmmple.com"}
           time={"11.03.21 12:50 am"}
+          text={"Guten Tag, Bi Belege hochladen Am 1. Juni war der geplante Fertigstellungstermin für den letztmaligen Jahresabschluss."}
+
         />
         <UserPostien
           img={
@@ -67,6 +70,8 @@ const CardPostien = () => {
           name={"Alexa Liras"}
           email={"alexa@simmmple.com"}
           time={"11.03.21 12:50 am"}
+          text={"Guten Tag, Bi Belege hochladen Am 1. Juni war der geplante Fertigstellungstermin für den letztmaligen Jahresabschluss."}
+
         />
         <UserPostien
           img={
@@ -75,6 +80,8 @@ const CardPostien = () => {
           name={"Alexa Liras"}
           email={"alexa@simmmple.com"}
           time={"11.03.21 12:50 am"}
+          text={"Guten Tag, Bi Belege hochladen Am 1. Juni war der geplante Fertigstellungstermin für den letztmaligen Jahresabschluss."}
+
         />
 
       </div>

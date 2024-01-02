@@ -95,21 +95,15 @@ const Sidebar = () => {
       <div className="flex flex-col">
         <div className="flex items-center justify-between relative ">
           <div className="flex items-center pl-1 gap-4 border-b-2 pb-2 mt-2">
-            <LogoIcon />
+            <button  onClick={handleSidebarToggle}> <LogoIcon  /></button>
+           
             {!toggleCollapse && (
               <p className="text-[#156585] font-semibold text-sm">
                 MR Finconsulting GmbH
               </p>
             )}
           </div>
-          {isCollapsible && (
-            <button
-              className={collapseIconClasses}
-              onClick={handleSidebarToggle}
-            >
-              <CollapsIcon />
-            </button>
-          )}
+        
         </div>
 
         <div className="flex flex-col items-start mt-3">

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-const YourComponent = () => {
+const TeamleitungButton = () => {
   const WIDTH = 50;
   const [bgOffset, setBgOffset] = useState(0);
   const [active, setActive] = useState(0);
@@ -16,7 +16,7 @@ const YourComponent = () => {
 
   return (
     <div
-    className='mb-7 font-bold text-xl '
+    className='mb-7 font-bold'
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -24,7 +24,7 @@ const YourComponent = () => {
      
       }}
     >
-      <div className='w-[82%]'
+      <div
         style={{
           '--bg-offset': `${bgOffset}%`,
           display: 'flex',
@@ -52,34 +52,34 @@ const YourComponent = () => {
         ></div>
         <button
           style={{
-            width: '50%',
+            width: '600px',
             border: 'none',
             padding: '0.75rem 1.5rem',
             background: '',
             cursor: 'pointer',
             zIndex:1,
-            color: active==0? 'white' : '#3AB3B3',
+            color: active==0? 'white' : '#265E73',
             
   
           }}
           onClick={() => slideBg(0)}
         >
-          Aktiv
+          Teamleitung
         </button>
         <button
           style={{
-            width: '50%',
+            width: '600px',
             border: 'none',
             padding: '0.75rem 1.5rem',
             background: 'transparent',
             cursor: 'pointer',
-            color: active==1? 'white' : '#3AB3B3',
+            color: active==1? 'white' : '#265E73',
             zIndex:1,
            
           }}
           onClick={() => {slideBg(1)} }
         >
-          Archiv
+          Gesamtauftrag
         </button>
        
       </div>
@@ -87,4 +87,4 @@ const YourComponent = () => {
   );
 };
 
-export default YourComponent;
+export default TeamleitungButton;

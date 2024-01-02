@@ -64,7 +64,7 @@ const Sidebar = () => {
   );
   const wrapperClasses =
     " h-[111vh] overflow-y-auto scrollbar-1 px-4 pt- pb-4 bg-light flex justify-between flex-col " +
-    (toggleCollapse ? "w-24" : "w-n80 ");
+    (toggleCollapse ? "w-24" : "w-80 ");
 
   const collapseIconClasses = !toggleCollapse
     ? "p-4 rounded absolute right-0 mt-12 "

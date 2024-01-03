@@ -1,6 +1,6 @@
+import CardPostien from '@/app/components/CardPostien'
+import PhoneButton from '@/app/components/PhoneButton'
 import React from 'react'
-import PhoneButton from '../components/PhoneButton'
-import CardPostien from '../components/CardPostien'
 
 const page = () => {
   return (

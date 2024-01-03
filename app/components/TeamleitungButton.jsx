@@ -24,7 +24,7 @@ const TeamleitungButton = () => {
      
       }}
     >
-      <div
+      <div className='w-[82%]'
         style={{
           '--bg-offset': `${bgOffset}%`,
           display: 'flex',
@@ -52,7 +52,7 @@ const TeamleitungButton = () => {
         ></div>
         <button
           style={{
-            width: '600px',
+            width: '50%',
             border: 'none',
             padding: '0.75rem 1.5rem',
             background: '',
@@ -68,7 +68,7 @@ const TeamleitungButton = () => {
         </button>
         <button
           style={{
-            width: '600px',
+            width: '50%',
             border: 'none',
             padding: '0.75rem 1.5rem',
             background: 'transparent',

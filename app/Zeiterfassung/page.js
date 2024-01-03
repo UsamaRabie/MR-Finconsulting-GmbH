@@ -29,40 +29,40 @@ function Zeiterfassung() {
   }
 
   return (
-    <div className="w-full md:w-[80%] mx-auto p-5 bg-white ">
+    <div className="w-full md:w-[80%] mx-auto p-5 bg-white rounded-[15px]">
 
       <div className="flex gap-5 items-center justify-around my-10">
         <div>
-          <label htmlFor="Schild">Schild</label>
-          <input type="text" name="Schild" id="Schild" className="border-2" />
+          <label className="text-lg text-[#265E73] mr-3" htmlFor="Schild">Schild</label>
+          <input type="text" name="Schild" id="Schild" className="border border-[#265E739C] w-16" />
         </div>
         <div>
-          <label htmlFor="Monat">Monat</label>
-          <input type="text" name="Monat" id="Monat" className="border-2" />
+          <label className="text-lg text-[#265E73] mr-3" htmlFor="Monat">Monat</label>
+          <input type="text" name="Monat" id="Monat" className="border border-[#265E739C] w-16" />
         </div>
         <div>
-          <label htmlFor="Beginn">Beginn</label>
-          <input type="text" name="Beginn" id="Beginn" className="border-2" />
+          <label className="text-lg text-[#265E73] mr-3" htmlFor="Beginn">Beginn</label>
+          <input type="text" name="Beginn" id="Beginn" className="border border-[#265E739C] w-16" />
         </div>
       </div>
 
       <div className="flex gap-5 items-center justify-around my-10">
         <div>
-          <label htmlFor="Pause">Pause</label>
-          <input type="text" name="Pause" id="Pause" className="border-2" />
+          <label className="text-lg text-[#265E73] mr-3" htmlFor="Pause">Pause</label>
+          <input type="text" name="Pause" id="Pause" className="border border-[#265E739C] w-16" />
         </div>
         <div>
-          <label htmlFor="Ende">Ende</label>
-          <input type="text" name="Ende" id="Ende" className="border-2" />
+          <label className="text-lg text-[#265E73] mr-3" htmlFor="Ende">Ende</label>
+          <input type="text" name="Ende" id="Ende" className="border border-[#265E739C] w-16" />
         </div>
       </div>
 
       <div className="flex flex-col gap-3 mx-10">
-        <label htmlFor="Bemerkungen">Bemerkungen</label>
+        <label className="text-xl text-[#265E73] mr-3" htmlFor="Bemerkungen">Bemerkungen</label>
         <textarea
           name="Ende"
           id="Ende"
-          className="border-2 w-[420px] h-[171px]"
+          className="border border-[#265E739C] w-[420px] h-[171px] rounded-[10px]"
         />
       </div>
 

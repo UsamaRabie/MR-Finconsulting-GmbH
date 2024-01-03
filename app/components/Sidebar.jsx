@@ -17,19 +17,20 @@ import Icon11 from "./icons/Icon11";
 import Icon12 from "./icons/Icon12";
 import Icon13 from "./icons/Icon13";
 import Icon14 from "./icons/Icon14";
-import CollapsIcon from "./icons/CollapsIcon";
 
 import { LogoIcon } from "../componentsClient/icons";
 const menuItems = [
+
   { id: 1, label: "Standort", icon: Icon1, link: "/" },
   {
     id: 2,
     label: "Nachrichten",
     icon: Icon2,
+    
     subMenu: [
-      { id: 21, label: "Posteingang", link: "/Posteingang" },
-      { id: 22, label: " Erledigt", link: "/Erledigt" },
-      { id: 23, label: "Gesendet", link: "/Gesendet" },
+      { id: 21, label: "Posteingang", link: "/Nachrichten/Posteingang" },
+      { id: 22, label: " Erledigt", link: "/Nachrichten/Erledigt" },
+      { id: 23, label: "Gesendet", link: "/Nachrichten/Gesendet" },
     ],
   },
   {
@@ -57,13 +58,14 @@ const Sidebar = () => {
 
   const router = useRouter();
 
+
   const activeMenu = useMemo(
     () =>
       menuItems.find((menu) => menu.link === router.pathname) || menuItems[0], // Use the first item as a default
     [router.pathname]
   );
   const wrapperClasses =
-    " h-[111vh] overflow-y-auto scrollbar-1 px-4 pt- pb-4 bg-light flex justify-between flex-col " +
+    "sticky top-0 h-[111.111vh] overflow-y-auto scrollbar-1 px-4 pt- pb-4 bg-light flex justify-between flex-col " +
     (toggleCollapse ? "w-24" : "w-80 ");
 
   const collapseIconClasses = !toggleCollapse
@@ -87,7 +89,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={wrapperClasses}
+      className={wrapperClasses +" "}
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseOver}
       style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
@@ -112,6 +114,7 @@ const Sidebar = () => {
             return (
               <div key={index} className="relative w-full">
                 {subMenu ? (
+                  
                   // Render submenu
                   <div className="relative group w-full ">
                     <div
@@ -123,7 +126,10 @@ const Sidebar = () => {
                         !toggleCollapse
                           ? "transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
                           : "border-none"
-                      }`}
+                      }
+                      ${path.startsWith("/Nachrichten")? "bg-[#3AB3B3] text-white":""}
+                      
+                      `}
                     >
                       <div
                         className={`p-2 rounded-[12px] mr-2 ${
@@ -150,11 +156,14 @@ const Sidebar = () => {
                           <Link
                             key={submenuItem.id}
                             href={submenuItem.link}
-                            className={`text-sm hover:border-[1px] hover:rounded-[15px] w-[128px] flex flex-col py-1 mb-3 ml-10 pl-4 text-[#265E739C] last:mb-0 ${
+                            className={`text-sm hover:border-[1px] hover:rounded-[15px] w-[128px] flex flex-col py-1 mb-3 ml-10 pl-4 text-[#265E739C] last:mb-0 mt-3 ${
                               activeLink === submenuItem.link
                                 ? "border-[1px] border-[#D9D9D9] rounded-[15px]"
                                 : ""
-                            }`}
+                            }
+                            
+                            
+                            `}
                           >
                             {submenuItem.label}
                           </Link>
@@ -164,8 +173,11 @@ const Sidebar = () => {
                 ) : (
                   // Render regular menu item
                   <Link
+                  
                     key={index}
                     href={menu.link}
+                    
+                    
                     className={`flex items-center w-full h-12 px-3 mt-2 rounded-[15px] text-[#265E73] ${
                       activeLink === menu.link && !toggleCollapse
                         ? "bg-[#3AB3B3] text-white"
@@ -194,10 +206,20 @@ const Sidebar = () => {
                         ? "bg-[#3AB3B3] text-white"
                         : ""
                     }
+
+                    ${
+                      menu.link === "/Nachrichten" && activeLink.startsWith("/Nachrichten")
+                        ? "bg-[#3AB3B3] text-white"
+                        : ""
+                    }
                     
-                    
+
+
                     `}
+                    
                   >
+                    
+                    
                     {/* Link content */}
                     <div
                       id="x"

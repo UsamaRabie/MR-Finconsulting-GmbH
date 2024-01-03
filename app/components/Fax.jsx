@@ -4,7 +4,7 @@ const Fax = () => {
 
 
   return (
-    <div className="bg-white w-[90%] mx-auto shadow-lg rounded-t-lg">
+    <div className="bg-white w-[80%] mx-auto shadow-lg rounded-t-lg">
     <div className="bg-[#3AB3B3] p-2 text-white rounded-t-lg">
     Neue Nachricht
     </div>
@@ -76,7 +76,7 @@ const Fax = () => {
       <textarea
         name=""
         id=""
-        className="w-full !outline-none p-2 h-96 resize-none"
+        className="w-full !outline-none p-2 h-[500px] resize-none"
         
           
       ></textarea>

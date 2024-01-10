@@ -65,7 +65,7 @@ const Sidebar = () => {
     [router.pathname]
   );
   const wrapperClasses =
-    "sticky top-0 h-[111.111vh] overflow-y-auto scrollbar-1 px-4 pb-4 bg-light flex justify-between flex-col " +
+    "sticky top-0 h-screen overflow-y-auto scrollbar-1 px-4 pb-4 bg-light flex justify-between flex-col " +
     (toggleCollapse ? "w-24" : "w-80 ");
 
   const collapseIconClasses = !toggleCollapse

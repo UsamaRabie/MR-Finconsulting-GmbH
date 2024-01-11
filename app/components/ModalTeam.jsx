@@ -8,6 +8,13 @@ const ModalTeam = ({ isOpen, onClose }) => {
     visible: { opacity: 1 },
   };
 
+  const handleModalClick = (e) => {
+    // Check if the click occurred outside the inner modal content
+    if (e.target.classList.contains("fixed") ) {
+      onClose();
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -17,11 +24,12 @@ const ModalTeam = ({ isOpen, onClose }) => {
           animate="visible"
           exit="hidden"
           variants={modalVariants}
+          onClick={handleModalClick}
         >
          
 
           <motion.div
-            className=" flex items-center justify-center "
+            className=" flex items-center justify-center"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-headline"

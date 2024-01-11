@@ -45,7 +45,7 @@ const ModalTeam = ({ isOpen, onClose }) => {
                 
               }}
               transition={{ duration: 0.3 }}
-              
+              __
             >
               <h1 className="text-center text-[#7B838B] text-xl mb-5 font-semibold mt-4">
                 Team 1

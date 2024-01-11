@@ -64,7 +64,7 @@ function User({ img, name, email }) {
             alt=""
           />
           <div className="flex flex-col items-start pt-2">
-            <p className="text-[#2D3748] font-bold">{name}</p>
+            <p className="text-[#2D3748] font-bold capitalize">{name}</p>
             <p className="text-[#718096]">{email}</p>
           </div>
         </div>

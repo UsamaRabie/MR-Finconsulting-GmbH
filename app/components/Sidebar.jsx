@@ -104,7 +104,7 @@ const Sidebar = () => {
     >
       <div className="flex flex-col">
         <div className="flex items-center justify-between relative ">
-          <div className="flex items-center pl-1 gap-4 border-b-2 pb-2 mt-2">
+          <div className="flex items-center pl-1 gap-2 border-b-2 pb-2 mt-2">
             <button onClick={handleSidebarToggle}>
               {" "}
               <LogoIcon />

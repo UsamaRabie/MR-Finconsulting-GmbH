@@ -9,10 +9,10 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 import UserTeamleitung from "./UserTeamleitung";
- 
+
 function UserTeamModal({ img, name, email, icon }) {
   const [openModal, setOpenModal] = useState(false);
- 
+
   const handleOpenModal = () => setOpenModal(!openModal);
   return (
     <div className=" w-full mx-auto bg-white border-b-2 last:border-b-0 ">
@@ -30,40 +30,37 @@ function UserTeamModal({ img, name, email, icon }) {
               <p className="text-[#2D3748] font-bold">{name}</p>
               <p className="text-[#718096]">{email}</p>
             </div>
-           
           </div>
         </div>
 
         <div className="ml-44 ">
           <div className="flex items-center gap-5">
-           
-              {icon === "plus" ? (
-                <svg
-                  className="hover:rotate-90 transition-all duration-200"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22 13C15.1276 13 -5.48921 13 1.3832 13C5.53068 13 9.66516 13 13.8061 13"
-                    stroke="#3AB3B3"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M12 2C12 9.18479 12 30.7387 12 23.5539C12 19.2179 12 14.8955 12 10.5663"
-                    stroke="#3AB3B3"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              ) : icon === "leader" ? (
-
-                <div className="flex items-center gap-6 rounded-full bg-white ">
-                  <div className="bg-[#F8F9FA] p-3 rounded-full">
-                  <Button  onClick={handleOpenModal} variant="gradient">
+            {icon === "plus" ? (
+              <svg
+                className="hover:rotate-90 transition-all duration-200"
+                width="22"
+                height="22"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 13C15.1276 13 -5.48921 13 1.3832 13C5.53068 13 9.66516 13 13.8061 13"
+                  stroke="#3AB3B3"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M12 2C12 9.18479 12 30.7387 12 23.5539C12 19.2179 12 14.8955 12 10.5663"
+                  stroke="#3AB3B3"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : icon === "leader" ? (
+              <div className="flex items-center gap-6 rounded-full bg-white ">
+                <div className="bg-[#F8F9FA] p-3 rounded-full">
+                  <button onClick={handleOpenModal}>
                     <svg
                       width="25"
                       height="25"
@@ -78,58 +75,59 @@ function UserTeamModal({ img, name, email, icon }) {
                         stroke-linecap="round"
                       />
                     </svg>
-                  </Button>
-                  </div>
-                  <p className="text-[#68717B]">Teamleiter für Team 4</p>
+                  </button>
                 </div>
-              ) : (
-                <svg
-                  width="24"
-                  height="4"
-                  viewBox="0 0 24 4"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22 2C15.1276 2 -5.48921 2 1.3832 2C5.53068 2 9.66516 2 13.8061 2"
-                    stroke="#3AB3B3"
-                    strokeWidth="3"
-                    strokeLinecap="round"
+                <p className="text-[#68717B]">Teamleiter für Team 4</p>
+              </div>
+            ) : (
+              <svg
+                width="24"
+                height="4"
+                viewBox="0 0 24 4"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 2C15.1276 2 -5.48921 2 1.3832 2C5.53068 2 9.66516 2 13.8061 2"
+                  stroke="#3AB3B3"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
+
+            <Dialog
+              className="w-[600px] bg-[#ECEFF1] rounded-3xl min-h-[370px]"
+              open={openModal}
+              handler={handleOpenModal}
+            >
+              <DialogHeader className="bg-[#ECEFF1] rounded-t-3xl text-[#94A0B0] text-lg text-center ">
+                Der Teamleiter wird in einen regulären Mitarbeiter umgewandelt.
+              </DialogHeader>
+              <DialogBody className="bg-white text-[#94A0B0] text-lg text-center mx-3 mt-3 rounded-t-3xl">
+                Wählen Sie Teamleiter aus.
+              </DialogBody>
+              <DialogFooter className="bg-white mx-3 rounded-b-3xl flex flex-col justify-start">
+                <div className="hover:bg-[#3AB3B3] rounded-3xl w-full">
+                  <UserTeamleitung
+                    imguser={
+                      "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    }
+                    nameuser={"Alexa Liras"}
+                    emailuser={"alexa@simmmple.com"}
                   />
-                </svg>
-              )}
-
-
-<Dialog className="w-[600px] bg-[#ECEFF1] rounded-3xl min-h-[370px]" open={openModal} handler={handleOpenModal}>
-        <DialogHeader className="bg-[#ECEFF1] rounded-t-3xl text-[#94A0B0] text-lg text-center ">Der Teamleiter wird in einen regulären Mitarbeiter umgewandelt.</DialogHeader>
-        <DialogBody className="bg-white text-[#94A0B0] text-lg text-center mx-3 mt-3 rounded-t-3xl">
-        Wählen Sie Teamleiter aus.
-        </DialogBody>
-        <DialogFooter className="bg-white mx-3 rounded-b-3xl flex flex-col justify-start">
-        <div className="hover:bg-[#3AB3B3] rounded-3xl w-full">
-        <UserTeamleitung
-            imguser={
-              "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            nameuser={"Alexa Liras"}
-            emailuser={"alexa@simmmple.com"}
-          />
-          </div>
-          <div className="hover:bg-[#3AB3B3] rounded-3xl  w-full ">
-        <UserTeamleitung
-            imguser={
-              "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            nameuser={"Alexa Liras"}
-            emailuser={"alexa@simmmple.com"}
-          />
-          </div>
-
-
-          
-        </DialogFooter>
-      </Dialog>
-  
+                </div>
+                <div className="hover:bg-[#3AB3B3] rounded-3xl  w-full ">
+                  <UserTeamleitung
+                    imguser={
+                      "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    }
+                    nameuser={"Alexa Liras"}
+                    emailuser={"alexa@simmmple.com"}
+                  />
+                </div>
+              </DialogFooter>
+            </Dialog>
           </div>
         </div>
       </div>
